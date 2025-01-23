@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/DataHelp.eu.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DataHelp.eu - Professional Data Recovery</title>
+    
+    <!-- Preload critical assets -->
+    <link rel="preload" href="/DataHelp.eu.svg" as="image" type="image/svg+xml">
+    <link rel="preload" href="/src/index.css" as="style">
+    <link rel="preload" href="/src/main.tsx" as="script" type="module">
+    
+    <!-- Preconnect to external domains -->
+    <link rel="preconnect" href="https://images.unsplash.com">
+    
+    <style>
+      .app-loading {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        background: #1B387A;
+        color: white;
+        font-family: system-ui, -apple-system, sans-serif;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="root">
+      <div class="app-loading">
+        <noscript>
+          <strong>We're sorry but this app doesn't work properly without JavaScript enabled. Please enable it to continue.</strong>
+        </noscript>
+      </div>
+    </div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
