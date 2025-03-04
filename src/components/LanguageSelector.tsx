@@ -12,10 +12,14 @@ export function LanguageSelector() {
   const [isOpen, setIsOpen] = useState(false);
   const dropdownRef = useRef<HTMLDivElement>(null);
   const { changeLanguage } = useLanguageRouter();
+  const [selectedFlag, setSelectedFlag] = useState<LanguageKey>('en');
 
   useEffect(() => {
     if (!i18n.language || !Object.keys(FLAG_COMPONENTS).includes(i18n.language)) {
       i18n.changeLanguage('en');
+      setSelectedFlag('en');
+    } else {
+      setSelectedFlag(i18n.language as LanguageKey);
     }
   }, [i18n]);
 
@@ -30,11 +34,15 @@ export function LanguageSelector() {
   }, []);
 
   const handleLanguageChange = (lng: LanguageKey) => {
-    changeLanguage(lng as SupportedLanguage);
+    // For Austrian flag, use German language but keep Austrian flag visual
+    const actualLanguage = lng === 'at' ? 'de' : lng;
+    changeLanguage(actualLanguage as SupportedLanguage);
+    setSelectedFlag(lng); // Keep the selected flag visual
     setIsOpen(false);
   };
 
-  const CurrentFlag = FLAG_COMPONENTS[i18n.language as LanguageKey] || FLAG_COMPONENTS.en;
+  // Use the selected flag for visual representation
+  const CurrentFlag = FLAG_COMPONENTS[selectedFlag] || FLAG_COMPONENTS.en;
 
   return (
     <div className="relative" ref={dropdownRef}>

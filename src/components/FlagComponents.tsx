@@ -29,6 +29,17 @@ export const GermanFlag: React.FC<FlagProps> = ({ className = "h-5 w-auto" }) =>
 </svg>
 );
 
+export const AustrianFlag: React.FC<FlagProps> = ({ className = "h-5 w-auto" }) => (
+  <svg 
+    viewBox="0 0 900 600" 
+    className={className}
+    aria-label="Austrian flag"
+  >
+    <path fill="#fff" d="M0 0h640v480H0z"/>
+    <path fill="#c8102e" d="M0 0h640v160H0zm0 320h640v160H0z"/>
+  </svg>
+);
+
 export const BritishFlag: React.FC<FlagProps> = ({ className = "h-5 w-auto" }) => (
   <svg 
     viewBox="0 0 900 600" 
@@ -47,6 +58,7 @@ export const BritishFlag: React.FC<FlagProps> = ({ className = "h-5 w-auto" }) =
 export const FLAG_COMPONENTS = {
   cs: CzechFlag,
   de: GermanFlag,
+  at: AustrianFlag,
   en: BritishFlag,
 } as const;
 

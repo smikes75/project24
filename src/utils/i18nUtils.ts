@@ -3,7 +3,7 @@ import { useTranslation } from 'react-i18next';
 import { useLocation, useNavigate } from 'react-router-dom';
 
 // Supported languages
-export const SUPPORTED_LANGUAGES = ['en', 'cs', 'de', 'it'] as const;
+export const SUPPORTED_LANGUAGES = ['en', 'cs', 'de'] as const;
 export type SupportedLanguage = typeof SUPPORTED_LANGUAGES[number];
 
 // Check if a language is supported

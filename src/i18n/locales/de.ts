@@ -275,7 +275,7 @@ export const de: Translations = {
   pricing: {
     title: 'Preise',
     subtitle: 'Faire Preise ohne versteckte Gebühren',
-    description: 'Wir glauben an Transparenz. Deshalb sind wir einer der wenigen, die nicht nur die minimalen, sondern auch die maximalen Preise unserer Dienstleistungen angeben. Sie zahlen nur für erfolgreiche Datenrettung. Datenrettung ist ein hochspezialisierter Prozess, bei dem jeder Fall einen individuellen Ansatz und maximale Aufmerksamkeit unserer Experten erfordert.',
+    description: 'Sie zahlen nur für erfolgreiche Datenrettung. Datenrettung ist ein hochspezialisierter Prozess, bei dem jeder Fall einen individuellen Ansatz und maximale Aufmerksamkeit unserer Experten erfordert.',
     getQuote: 'Unverbindliche Beratung',
     hdd: {
       title: 'Festplattenrettung',

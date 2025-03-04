@@ -23,6 +23,7 @@ function ServicePriceList() {
   const getPriceUnit = () => {
     switch (currentLang) {
       case 'de':
+        return '€';
       case 'en':
         return '€';
       case 'cs':
@@ -31,53 +32,134 @@ function ServicePriceList() {
     }
   };
 
+  // Get hourly unit based on language
+  const getHourlyUnit = () => {
+    switch (currentLang) {
+      case 'de':
+        return '€/Std';
+      case 'en':
+        return '€/hr';
+      case 'cs':
+      default:
+        return 'Kč/hod';
+    }
+  };
+
   const priceUnit = getPriceUnit();
-  const hourlyUnit = currentLang === 'cs' ? `${priceUnit}/hod` : `${priceUnit}/h`;
+  const hourlyUnit = getHourlyUnit();
+
+  // Get prices based on language
+  const getPrices = () => {
+    if (currentLang === 'cs') {
+      return {
+        basicDiagnostics: `800 ${priceUnit}`,
+        detailedDiagnostics: `1200 ${priceUnit}`,
+        
+        deletedRecovery: `1000 ${hourlyUnit}`,
+        filesystemRecovery: `1200 ${hourlyUnit}`,
+        compressedRecovery: `1100 ${hourlyUnit}`,
+        raidRecovery: `1500 ${hourlyUnit}`,
+        databaseRecovery: `1400 ${hourlyUnit}`,
+        
+        electronicsRepair: `1800 ${hourlyUnit}`,
+        headsReplacement: `2500 ${hourlyUnit}`,
+        mechanicsRepair: `2200 ${hourlyUnit}`,
+        bgaRepair: `2800 ${hourlyUnit}`,
+        romEmulator: `2400 ${hourlyUnit}`,
+        serviceArea: `2600 ${hourlyUnit}`,
+        
+        pc3000Work: `2200 ${hourlyUnit}`,
+        nandReconstruction: `2500 ${hourlyUnit}`,
+        securityChips: `3000 ${hourlyUnit}`,
+        mcmtTables: `2800 ${hourlyUnit}`,
+        firmwareAnalysis: `2600 ${hourlyUnit}`,
+        reverseEngineering: `2400 ${hourlyUnit}`,
+        damagedService: `2700 ${hourlyUnit}`,
+        
+        consulting: `800 ${hourlyUnit}`,
+        backup: `500 ${hourlyUnit}`,
+        encryption: `700 ${hourlyUnit}`
+      };
+    } else {
+      // Euro prices (converted and rounded to end with 0 or 5)
+      return {
+        basicDiagnostics: `30 ${priceUnit}`,
+        detailedDiagnostics: `50 ${priceUnit}`,
+        
+        deletedRecovery: `40 ${hourlyUnit}`,
+        filesystemRecovery: `50 ${hourlyUnit}`,
+        compressedRecovery: `45 ${hourlyUnit}`,
+        raidRecovery: `60 ${hourlyUnit}`,
+        databaseRecovery: `55 ${hourlyUnit}`,
+        
+        electronicsRepair: `70 ${hourlyUnit}`,
+        headsReplacement: `100 ${hourlyUnit}`,
+        mechanicsRepair: `90 ${hourlyUnit}`,
+        bgaRepair: `110 ${hourlyUnit}`,
+        romEmulator: `95 ${hourlyUnit}`,
+        serviceArea: `105 ${hourlyUnit}`,
+        
+        pc3000Work: `90 ${hourlyUnit}`,
+        nandReconstruction: `100 ${hourlyUnit}`,
+        securityChips: `120 ${hourlyUnit}`,
+        mcmtTables: `110 ${hourlyUnit}`,
+        firmwareAnalysis: `105 ${hourlyUnit}`,
+        reverseEngineering: `95 ${hourlyUnit}`,
+        damagedService: `110 ${hourlyUnit}`,
+        
+        consulting: `30 ${hourlyUnit}`,
+        backup: `20 ${hourlyUnit}`,
+        encryption: `30 ${hourlyUnit}`
+      };
+    }
+  };
+
+  const prices = getPrices();
 
   const sections: PriceSection[] = [
     {
       icon: <Tool className="h-6 w-6 text-primary" />,
       title: t('pricing.serviceList.sections.diagnostics.title'),
       items: [
-        { title: t('pricing.serviceList.sections.diagnostics.items.basic'), price: `800 ${hourlyUnit}` },
-        { title: t('pricing.serviceList.sections.diagnostics.items.detailed'), price: `1200 ${hourlyUnit}` },
-        { title: t('pricing.serviceList.sections.diagnostics.items.planning'), price: `900 ${hourlyUnit}` }
+        { title: t('pricing.serviceList.sections.diagnostics.items.basic'), price: prices.basicDiagnostics },
+        { title: t('pricing.serviceList.sections.diagnostics.items.detailed'), price: prices.detailedDiagnostics }
+        // "Development of data recovery plan" item removed as requested
       ]
     },
     {
       icon: <Cpu className="h-6 w-6 text-primary" />,
       title: t('pricing.serviceList.sections.software.title'),
       items: [
-        { title: t('pricing.serviceList.sections.software.items.deleted'), price: `1000 ${hourlyUnit}` },
-        { title: t('pricing.serviceList.sections.software.items.filesystem'), price: `1200 ${hourlyUnit}` },
-        { title: t('pricing.serviceList.sections.software.items.compressed'), price: `1100 ${hourlyUnit}` },
-        { title: t('pricing.serviceList.sections.software.items.raid'), price: `1500 ${hourlyUnit}` },
-        { title: t('pricing.serviceList.sections.software.items.database'), price: `1400 ${hourlyUnit}` }
+        { title: t('pricing.serviceList.sections.software.items.deleted'), price: prices.deletedRecovery },
+        { title: t('pricing.serviceList.sections.software.items.filesystem'), price: prices.filesystemRecovery },
+        { title: t('pricing.serviceList.sections.software.items.compressed'), price: prices.compressedRecovery },
+        { title: t('pricing.serviceList.sections.software.items.raid'), price: prices.raidRecovery },
+        { title: t('pricing.serviceList.sections.software.items.database'), price: prices.databaseRecovery }
       ]
     },
     {
       icon: <Tool className="h-6 w-6 text-primary" />,
       title: t('pricing.serviceList.sections.hardware.title'),
       items: [
-        { title: t('pricing.serviceList.sections.hardware.items.electronics'), price: `1800 ${hourlyUnit}` },
-        { title: t('pricing.serviceList.sections.hardware.items.heads'), price: `2500 ${hourlyUnit}` },
-        { title: t('pricing.serviceList.sections.hardware.items.mechanics'), price: `2200 ${hourlyUnit}` },
-        { title: t('pricing.serviceList.sections.hardware.items.bga'), price: `2800 ${hourlyUnit}` },
-        { title: t('pricing.serviceList.sections.hardware.items.rom'), price: `2400 ${hourlyUnit}` },
-        { title: t('pricing.serviceList.sections.hardware.items.service'), price: `2600 ${hourlyUnit}` }
+        { title: t('pricing.serviceList.sections.hardware.items.electronics'), price: prices.electronicsRepair },
+        { title: t('pricing.serviceList.sections.hardware.items.heads'), price: prices.headsReplacement },
+        { title: t('pricing.serviceList.sections.hardware.items.mechanics'), price: prices.mechanicsRepair },
+        { title: t('pricing.serviceList.sections.hardware.items.bga'), price: prices.bgaRepair },
+        { title: t('pricing.serviceList.sections.hardware.items.rom'), price: prices.romEmulator },
+        { title: t('pricing.serviceList.sections.hardware.items.service'), price: prices.serviceArea }
       ]
     },
     {
       icon: <Zap className="h-6 w-6 text-primary" />,
       title: t('pricing.serviceList.sections.specialized.title'),
       items: [
-        { title: t('pricing.serviceList.sections.specialized.items.pc3000'), price: `2200 ${hourlyUnit}` },
-        { title: t('pricing.serviceList.sections.specialized.items.nand'), price: `2500 ${hourlyUnit}` },
-        { title: t('pricing.serviceList.sections.specialized.items.security'), price: `3000 ${hourlyUnit}` },
-        { title: t('pricing.serviceList.sections.specialized.items.mcmt'), price: `2800 ${hourlyUnit}` },
-        { title: t('pricing.serviceList.sections.specialized.items.firmware'), price: `2600 ${hourlyUnit}` },
-        { title: t('pricing.serviceList.sections.specialized.items.reverse'), price: `2400 ${hourlyUnit}` },
-        { title: t('pricing.serviceList.sections.specialized.items.damaged'), price: `2700 ${hourlyUnit}` }
+        { title: t('pricing.serviceList.sections.specialized.items.pc3000'), price: prices.pc3000Work },
+        { title: t('pricing.serviceList.sections.specialized.items.nand'), price: prices.nandReconstruction },
+        { title: t('pricing.serviceList.sections.specialized.items.security'), price: prices.securityChips },
+        { title: t('pricing.serviceList.sections.specialized.items.mcmt'), price: prices.mcmtTables },
+        { title: t('pricing.serviceList.sections.specialized.items.firmware'), price: prices.firmwareAnalysis },
+        { title: t('pricing.serviceList.sections.specialized.items.reverse'), price: prices.reverseEngineering },
+        { title: t('pricing.serviceList.sections.specialized.items.damaged'), price: prices.damagedService }
       ]
     },
     {
@@ -93,10 +175,10 @@ function ServicePriceList() {
       icon: <Plus className="h-6 w-6 text-primary" />,
       title: t('pricing.serviceList.sections.additional.title'),
       items: [
-        { title: t('pricing.serviceList.sections.additional.items.consulting'), price: `800 ${hourlyUnit}` },
-        { title: t('pricing.serviceList.sections.additional.items.backup'), price: `500 ${hourlyUnit}` },
-        { title: t('pricing.serviceList.sections.additional.items.encryption'), price: `700 ${hourlyUnit}` },
-        { title: t('pricing.serviceList.sections.additional.items.transport'), price: currentLang === 'cs' ? `12 Kč/km + 500 Kč/hod` : `1 ${priceUnit}/km + 50 ${priceUnit}/h` }
+        { title: t('pricing.serviceList.sections.additional.items.consulting'), price: prices.consulting },
+        { title: t('pricing.serviceList.sections.additional.items.backup'), price: prices.backup },
+        { title: t('pricing.serviceList.sections.additional.items.encryption'), price: prices.encryption }
+        // Transport item removed as requested
       ]
     }
   ];
