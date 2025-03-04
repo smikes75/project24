@@ -7,7 +7,8 @@ import { FAQ } from '../components/FAQ';
 import { SEO } from '../components/SEO';
 
 function PricingPage() {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
+  const currentLang = i18n.language;
 
   const pricingTiers = [
     {
@@ -22,7 +23,7 @@ function PricingPage() {
         t('pricing.hdd.features.warranty'),
         t('pricing.hdd.features.support')
       ],
-      link: '/services/hdd-recovery/case-studies'
+      link: `/${currentLang}/services/hdd-recovery/case-studies`
     },
     {
       icon: <Smartphone className="h-8 w-8 text-accent" />,
@@ -36,7 +37,7 @@ function PricingPage() {
         t('pricing.ssd.features.warranty'),
         t('pricing.ssd.features.support')
       ],
-      link: '/services/ssd-recovery/case-studies'
+      link: `/${currentLang}/services/ssd-recovery/case-studies`
     },
     {
       icon: <Database className="h-8 w-8 text-accent" />,
@@ -50,21 +51,21 @@ function PricingPage() {
         t('pricing.raid.features.warranty'),
         t('pricing.raid.features.support')
       ],
-      link: '/services/raid-systems/case-studies'
+      link: `/${currentLang}/services/raid-systems/case-studies`
     },
     {
       icon: <Calculator className="h-8 w-8 text-accent" />,
-      title: "Položkový ceník",
-      description: "Detailní ceník všech našich služeb včetně doplňkových prací",
-      price: "Kompletní\nceník",
-      noSuccess: "Transparentní ceny",
+      title: t('pricing.serviceList.title'),
+      description: t('pricing.serviceList.description'),
+      price: t('pricing.serviceList.subtitle'),
+      noSuccess: t('pricing.serviceList.pricing.note'),
       features: [
-        "Základní diagnostika",
-        "Specializované práce",
-        "Express příplatky",
-        "Doplňkové služby"
+        t('pricing.serviceList.sections.diagnostics.title'),
+        t('pricing.serviceList.sections.software.title'),
+        t('pricing.serviceList.sections.hardware.title'),
+        t('pricing.serviceList.sections.express.title')
       ],
-      link: '/pricing/service-list'
+      link: `/${currentLang}/pricing/service-list`
     }
   ];
 
@@ -74,7 +75,7 @@ function PricingPage() {
         title={`${t('pricing.title')} | DataHelp.eu`}
         description={t('pricing.description')}
         keywords="data recovery pricing, hdd recovery cost, ssd recovery price, raid recovery pricing"
-        canonical="https://datahelp.eu/pricing"
+        canonical={`https://datahelp.eu/${currentLang}/pricing`}
       />
       
       <PageHeader

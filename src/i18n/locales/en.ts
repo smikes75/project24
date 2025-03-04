@@ -185,7 +185,7 @@ export const en: Translations = {
     hdd: {
       title: 'HDD Recovery',
       description: 'Mechanically damaged or non-functional hard drives',
-      price: 'From 350 €\nMax 1,200 €',
+      price: 'From 350 €',
       noSuccess: 'If data cannot be recovered = you don\'t pay for recovery',
       features: {
         diagnosis: 'Free initial diagnosis',
@@ -197,7 +197,7 @@ export const en: Translations = {
     ssd: {
       title: 'SSD Recovery',
       description: 'SSD drives, USB flash drives and memory cards',
-      price: 'From 250 €\nMax 1,400 €',
+      price: 'From 250 €',
       noSuccess: 'If data cannot be recovered = you don\'t pay for recovery',
       features: {
         diagnosis: 'Free initial diagnosis',
@@ -228,6 +228,77 @@ export const en: Translations = {
         sla: 'Individual SLA',
         support: 'Expert support',
         onsite: 'Individual pricing'
+      }
+    },
+    serviceList: {
+      title: 'Detailed Price List',
+      subtitle: 'Detailed price list of all our services',
+      description: 'Transparent price list of all our services including specialized work',
+      sections: {
+        diagnostics: {
+          title: 'Diagnostics and Analysis',
+          items: {
+            basic: 'Basic media diagnostics (determining type of damage)',
+            detailed: 'Detailed analysis of damage and recovery options',
+            planning: 'Development of data recovery plan'
+          }
+        },
+        software: {
+          title: 'Software Data Recovery',
+          items: {
+            deleted: 'Recovery of deleted files',
+            filesystem: 'Repair of damaged file systems',
+            compressed: 'Decompression and recovery of compressed files',
+            raid: 'Data transfer from damaged RAID array',
+            database: 'Data recovery from damaged databases'
+          }
+        },
+        hardware: {
+          title: 'Hardware Data Recovery',
+          items: {
+            electronics: 'Hard drive electronics replacement',
+            heads: 'Head replacement in clean room environment',
+            mechanics: 'Micromanipulation with HDD mechanics',
+            bga: 'BGA chip soldering and firmware chip replacement',
+            rom: 'Work with ROM emulator',
+            service: 'Repair of disk service area'
+          }
+        },
+        specialized: {
+          title: 'Specialized Services',
+          items: {
+            pc3000: 'Work with PC-3000 UDMA/SSD/Flash',
+            nand: 'NAND translator reconstruction',
+            security: 'Analysis and repair of T2/T3 security chips',
+            mcmt: 'MCMT tables reconstruction',
+            firmware: 'Firmware analysis and modification',
+            reverse: 'File system reverse engineering',
+            damaged: 'Work with damaged service data'
+          }
+        },
+        express: {
+          title: 'Express Services',
+          items: {
+            h24: 'Express processing surcharge (within 24 hours)',
+            overtime: 'Work outside business hours',
+            weekend: 'Weekend and holiday work'
+          }
+        },
+        additional: {
+          title: 'Additional Services',
+          items: {
+            consulting: 'Consultation and advisory',
+            backup: 'Backup of recovered data to new media',
+            encryption: 'Encryption of recovered data',
+            transport: 'Transportation to customer'
+          }
+        }
+      },
+      pricing: {
+        hourly: '$/hour',
+        percentage: '%',
+        distance: '$/km + $50/hour',
+        note: 'Minimum billable time is 1 hour. Prices are without VAT. Prices do not include spare parts and media for data backup. The exact price will be determined after basic diagnostics. In case of unsuccessful data recovery, only diagnostics is charged.'
       }
     }
   },

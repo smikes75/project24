@@ -1,6 +1,5 @@
 import React from 'react';
 import { Hero } from '../components/Hero';
-import { Services } from '../components/Services';
 import { Gallery } from '../components/Gallery';
 import { ProcessInfographic } from '../components/ProcessInfographic';
 import { ElfsightReviews } from '../components/ElfsightReviews';
@@ -17,7 +16,7 @@ function HomePage() {
       <SEO {...seo} />
       <Hero />
       <ScrollingBanner />
-      <Services />
+      {/* Services section removed */}
       <Gallery />
       <ProcessInfographic />
       <ElfsightReviews />

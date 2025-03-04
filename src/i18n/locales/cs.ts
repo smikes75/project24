@@ -204,12 +204,12 @@ export const cs: Translations = {
   pricing: {
     title: 'Ceník',
     subtitle: 'Férové ceny bez skrytých poplatků',
-    description: 'Věříme v transparentnost. Proto jako jedni z mála uvádíme nejen minimální, ale i maximální ceny našich služeb. Platíte pouze za úspěšnou záchranu dat. Záchrana dat je vysoce specializovaný proces, kde každý případ vyžaduje individuální přístup a maximální péči našich expertů.',
+    description: 'V našich případových studiích najdete konkrétní ceny skutečných zakázek a platíte pouze za úspěšně zachráněná data. Ke každému případu přistupujeme individuálně.',
     getQuote: 'Nezávazná konzultace',
     hdd: {
       title: 'Záchrana HDD',
       description: 'Mechanicky poškozené nebo nefunkční pevné disky',
-      price: 'Od 350 €\nMax 1.200 €',
+      price: 'Od 350 €',
       noSuccess: 'Data nelze obnovit = záchranu neplatíte',
       features: {
         diagnosis: 'Bezplatná vstupní diagnostika',
@@ -221,7 +221,7 @@ export const cs: Translations = {
     ssd: {
       title: 'Záchrana SSD',
       description: 'SSD disky, USB flash paměti a memory karty ',
-      price: 'Od 250 €\nMax 1.400 €',
+      price: 'Od 250 €',
       noSuccess: 'Data nelze obnovit = záchranu neplatíte',
       features: {
         diagnosis: 'Bezplatná vstupní diagnostika',
@@ -252,6 +252,77 @@ export const cs: Translations = {
         sla: 'Individuální SLA',
         support: 'Odborná podpora',
         onsite: 'Individuální ceny'
+      }
+    },
+    serviceList: {
+      title: 'Položkový ceník',
+      subtitle: 'Detailní ceník všech našich služeb',
+      description: 'Transparentní ceník všech našich služeb včetně specializovaných prací',
+      sections: {
+        diagnostics: {
+          title: 'Diagnostika a analýza',
+          items: {
+            basic: 'Základní diagnostika média (určení typu poškození)',
+            detailed: 'Detailní analýza poškození a možností obnovy',
+            planning: 'Vypracování postupu záchrany dat'
+          }
+        },
+        software: {
+          title: 'Softwarová záchrana dat',
+          items: {
+            deleted: 'Obnova smazaných souborů',
+            filesystem: 'Oprava poškozených souborových systémů',
+            compressed: 'Dekomprese a obnova komprimovaných souborů',
+            raid: 'Převod dat z poškozeného RAID pole',
+            database: 'Obnova dat z poškozených databází'
+          }
+        },
+        hardware: {
+          title: 'Hardwarová záchrana dat',
+          items: {
+            electronics: 'Výměna elektroniky pevného disku',
+            heads: 'Výměna hlav v čistém prostředí',
+            mechanics: 'Mikromanipulace s mechanikou HDD',
+            bga: 'Pájení BGA čipů a výměna firmware čipů',
+            rom: 'Práce s ROM emulátorem',
+            service: 'Oprava servisní oblasti disku'
+          }
+        },
+        specialized: {
+          title: 'Specializované služby',
+          items: {
+            pc3000: 'Práce s PC-3000 UDMA/SSD/Flash',
+            nand: 'Rekonstrukce NAND translátoru',
+            security: 'Analýza a oprava T2/T3 security čipů',
+            mcmt: 'Rekonstrukce MCMT tabulek',
+            firmware: 'Analýza a modifikace firmware',
+            reverse: 'Reverse engineering souborových systémů',
+            damaged: 'Práce s poškozenými servisními daty'
+          }
+        },
+        express: {
+          title: 'Expresní služby',
+          items: {
+            h24: 'Příplatek za expresní zpracování (do 24 hodin)',
+            overtime: 'Práce mimo pracovní dobu',
+            weekend: 'Víkendové a sváteční práce'
+          }
+        },
+        additional: {
+          title: 'Dodatečné služby',
+          items: {
+            consulting: 'Konzultace a poradenství',
+            backup: 'Záloha zachráněných dat na nové médium',
+            encryption: 'Šifrování zachráněných dat',
+            transport: 'Doprava k zákazníkovi'
+          }
+        }
+      },
+      pricing: {
+        hourly: 'Kč/hod',
+        percentage: '%',
+        distance: 'Kč/km + 500 Kč/hod',
+        note: 'Minimální účtovaná doba je 1 hodina. Ceny jsou uvedeny bez DPH. Ceny nezahrnují náhradní díly a média pro zálohu dat. Přesná cena bude stanovena po základní diagnostice. V případě neúspěšné záchrany dat se účtuje pouze diagnostika.'
       }
     }
   },
@@ -291,7 +362,19 @@ export const cs: Translations = {
       email: 'E-mail',
       phone: 'Telefon',
       message: 'Zpráva',
-      send: 'Odeslat zprávu'
+      send: 'Odeslat zprávu',
+      sending: 'Odesílání...',
+      success: 'Zpráva byla úspěšně odeslána',
+      error: 'Došlo k chybě. Zkuste to prosím později.',
+      rateLimit: 'Příliš mnoho požadavků. Zkuste to znovu za {seconds} sekund.',
+      tooManyRequests: 'Příliš mnoho požadavků. Zkuste to prosím později.',
+      errors: {
+        name: 'Jméno je povinné',
+        email: 'E-mail je povinný',
+        emailFormat: 'Neplatný formát e-mailu',
+        phone: 'Neplatný formát telefonu',
+        message: 'Zpráva je povinná'
+      }
     },
     info: {
       title: 'Kontaktní informace',
@@ -331,7 +414,7 @@ export const cs: Translations = {
         description: 'Profesionální systém pro obnovu dat z HDD',
         features: {
           manufacturers: 'Podpora všech výrobců HDD',
-          firmware: 'Opravy firmware',
+          firmware: 'Opra vy firmware',
           recovery: 'Pokročilá obnova dat'
         }
       },

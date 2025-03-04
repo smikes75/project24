@@ -1,6 +1,18 @@
 import type { Translations } from '../../types/translations';
 
 export const de: Translations = {
+  seo: {
+    about: {
+      title: "Über uns | DataHelp.eu",
+      description: "Professionelle Datenrettung mit über 20 Jahren Erfahrung. Spezialisiertes Labor, zertifizierte Techniker und modernste Technologie für die Datenwiederherstellung.",
+      keywords: "über uns datahelp, erfahrung datenrettung, expertenteam, datenrettungslabor, zertifizierte spezialisten, datensicherheit, professionelle datenrettung"
+    },
+    services: {
+      title: "Dienstleistungen | DataHelp.eu",
+      description: "Umfassende Datenrettungsdienste für HDD, SSD, RAID-Systeme und Unternehmenslösungen. Spezialisiertes Labor mit über 20 Jahren Erfahrung.",
+      keywords: "datenrettungsdienste, datenwiederherstellungsdienste, hdd-rettung, ssd-wiederherstellung, raid-systeme, unternehmenslösungen"
+    }
+  },
   nav: {
     home: 'Startseite',
     services: 'Dienstleistungen',
@@ -57,6 +69,9 @@ export const de: Translations = {
     hdd: {
       title: 'Festplattenrettung',
       desc: 'Von beschädigten oder defekten Festplatten.',
+      keywords: {
+        recovery: "festplattenrettung, datenwiederherstellung festplatte, festplattenreparatur, mechanische beschädigung hdd, elektronische fehler hdd, datenrekonstruktion"
+      },
       features: {
         mechanical: 'Mechanische Schäden',
         mechanicalDesc: 'Defekte Leseköpfe, beschädigte Platten, Service-Daten-Ausfall',
@@ -78,6 +93,9 @@ export const de: Translations = {
     ssd: {
       title: 'SSD-Rettung',
       desc: 'Spezialisierte Datenrettung von Flash-Speichern und SSDs.',
+      keywords: {
+        recovery: "ssd-datenrettung, ssd-datenwiederherstellung, ssd-reparatur, beschädigter controller ssd, ssd-firmware, flash-speicher"
+      },
       features: {
         controller: 'Controller-Defekte',
         controllerDesc: 'Datenrettung bei defektem Controller',
@@ -99,6 +117,9 @@ export const de: Translations = {
     raid: {
       title: 'RAID, NAS-Systeme',
       desc: 'Datenrettung von allen RAID-Arrays und NAS-Servern.',
+      keywords: {
+        recovery: "raid-datenrettung, raid-systeme wiederherstellung, raid-array reparatur, raid-rekonstruktion, nas-server rettung, san-systeme datenwiederherstellung, raid 0 rettung, raid 5 wiederherstellung, raid 10 rekonstruktion, RAID recovery, RAID 5E, RAID 6, serverabsturz"
+      },
       features: {
         hardware: 'Hardware-RAID',
         hardwareDesc: 'Datenrettung bei Ausfall einer überkritischen Anzahl von Festplatten',
@@ -122,6 +143,9 @@ export const de: Translations = {
     business: {
       title: 'Partnerprogramm',
       desc: 'Wir bieten Zusammenarbeit für IT-Firmen und Serviceanbieter',
+      keywords: {
+        recovery: "unternehmensdatenrettung, dienste für unternehmen, datahelp partnerprogramm, b2b datenrettung, express datenwiederherstellung, prioritätsservice, datenrettung für unternehmen, it-firmen datenrettung, sla datenrettung"
+      },
       contact: {
         salesTeam: 'Für weitere Informationen kontaktieren Sie unser Vertriebsteam:',
         leaveMessage: 'Oder hinterlassen Sie uns eine Nachricht:'
@@ -169,6 +193,77 @@ export const de: Translations = {
       expertiseDesc: 'Professionelles Expertenteam',
       speed: 'Geschwindigkeit',
       speedDesc: 'Effiziente Problemlösung'
+    },
+    serviceList: {
+      title: 'Detaillierte Preisliste',
+      subtitle: 'Detaillierte Preisliste aller unserer Dienstleistungen',
+      description: 'Transparente Preisliste aller unserer Dienstleistungen einschließlich spezialisierter Arbeiten',
+      sections: {
+        diagnostics: {
+          title: 'Diagnose und Analyse',
+          items: {
+            basic: 'Grundlegende Mediendiagnose (Bestimmung der Schadensart)',
+            detailed: 'Detaillierte Analyse von Schäden und Wiederherstellungsoptionen',
+            planning: 'Entwicklung eines Datenwiederherstellungsplans'
+          }
+        },
+        software: {
+          title: 'Software-Datenwiederherstellung',
+          items: {
+            deleted: 'Wiederherstellung gelöschter Dateien',
+            filesystem: 'Reparatur beschädigter Dateisysteme',
+            compressed: 'Dekomprimierung und Wiederherstellung komprimierter Dateien',
+            raid: 'Datenübertragung aus beschädigtem RAID-Array',
+            database: 'Datenwiederherstellung aus beschädigten Datenbanken'
+          }
+        },
+        hardware: {
+          title: 'Hardware-Datenwiederherstellung',
+          items: {
+            electronics: 'Austausch der Festplattenelektronik',
+            heads: 'Kopfaustausch in Reinraumumgebung',
+            mechanics: 'Mikromanipulation mit HDD-Mechanik',
+            bga: 'BGA-Chip-Löten und Firmware-Chip-Austausch',
+            rom: 'Arbeit mit ROM-Emulator',
+            service: 'Reparatur des Festplatten-Servicebereichs'
+          }
+        },
+        specialized: {
+          title: 'Spezialisierte Dienstleistungen',
+          items: {
+            pc3000: 'Arbeit mit PC-3000 UDMA/SSD/Flash',
+            nand: 'NAND-Übersetzer-Rekonstruktion',
+            security: 'Analyse und Reparatur von T2/T3-Sicherheitschips',
+            mcmt: 'MCMT-Tabellen-Rekonstruktion',
+            firmware: 'Firmware-Analyse und -Modifikation',
+            reverse: 'Dateisystem-Reverse-Engineering',
+            damaged: 'Arbeit mit beschädigten Servicedaten'
+          }
+        },
+        express: {
+          title: 'Express-Dienste',
+          items: {
+            h24: 'Express-Bearbeitungszuschlag (innerhalb von 24 Stunden)',
+            overtime: 'Arbeit außerhalb der Geschäftszeiten',
+            weekend: 'Wochenend- und Feiertagsarbeit'
+          }
+        },
+        additional: {
+          title: 'Zusätzliche Dienstleistungen',
+          items: {
+            consulting: 'Beratung',
+            backup: 'Sicherung wiederhergestellter Daten auf neuen Medien',
+            encryption: 'Verschlüsselung wiederhergestellter Daten',
+            transport: 'Transport zum Kunden'
+          }
+        }
+      },
+      pricing: {
+        hourly: '€/Stunde',
+        percentage: '%',
+        distance: '€/km + 50€/Stunde',
+        note: 'Die Mindestabrechnung beträgt 1 Stunde. Die Preise verstehen sich ohne MwSt. Die Preise beinhalten keine Ersatzteile und Medien für die Datensicherung. Der genaue Preis wird nach der Grunddiagnose festgelegt. Bei erfolgloser Datenrettung wird nur die Diagnose berechnet.'
+      }
     }
   },
   reviews: {
@@ -180,12 +275,12 @@ export const de: Translations = {
   pricing: {
     title: 'Preise',
     subtitle: 'Faire Preise ohne versteckte Gebühren',
-    description: 'Wir glauben an Transparenz. Deshalb geben wir als einer der wenigen nicht nur die minimalen, sondern auch die maximalen Preise unserer Dienstleistungen an. Sie zahlen nur für erfolgreiche Datenrettung. Datenrettung ist ein hochspezialisierter Prozess, bei dem jeder Fall einen individuellen Ansatz und maximale Aufmerksamkeit unserer Experten erfordert.',
+    description: 'Wir glauben an Transparenz. Deshalb sind wir einer der wenigen, die nicht nur die minimalen, sondern auch die maximalen Preise unserer Dienstleistungen angeben. Sie zahlen nur für erfolgreiche Datenrettung. Datenrettung ist ein hochspezialisierter Prozess, bei dem jeder Fall einen individuellen Ansatz und maximale Aufmerksamkeit unserer Experten erfordert.',
     getQuote: 'Unverbindliche Beratung',
     hdd: {
       title: 'Festplattenrettung',
       description: 'Mechanisch beschädigte oder defekte Festplatten',
-      price: 'Ab 350 €\nMax 1.200 €',
+      price: 'Ab 350 €',
       noSuccess: 'Keine Datenrettung möglich = keine Kosten',
       features: {
         diagnosis: 'Kostenlose Eingangsdiagnose',
@@ -197,7 +292,7 @@ export const de: Translations = {
     ssd: {
       title: 'SSD-Rettung',
       description: 'SSD-Laufwerke, USB-Sticks und Speicherkarten',
-      price: 'Ab 250 €\nMax 1.400 €',
+      price: 'Ab 250 €',
       noSuccess: 'Keine Datenrettung möglich = keine Kosten',
       features: {
         diagnosis: 'Kostenlose Eingangsdiagnose',
@@ -228,6 +323,77 @@ export const de: Translations = {
         sla: 'Individuelle SLA',
         support: 'Fachkundige Unterstützung',
         onsite: 'Individuelle Preise'
+      }
+    },
+    serviceList: {
+      title: 'Detaillierte Preisliste',
+      subtitle: 'Detaillierte Preisliste aller unserer Dienstleistungen',
+      description: 'Transparente Preisliste aller unserer Dienstleistungen einschließlich spezialisierter Arbeiten',
+      sections: {
+        diagnostics: {
+          title: 'Diagnose und Analyse',
+          items: {
+            basic: 'Grundlegende Mediendiagnose (Bestimmung der Schadensart)',
+            detailed: 'Detaillierte Analyse von Schäden und Wiederherstellungsoptionen',
+            planning: 'Entwicklung eines Datenwiederherstellungsplans'
+          }
+        },
+        software: {
+          title: 'Software-Datenwiederherstellung',
+          items: {
+            deleted: 'Wiederherstellung gelöschter Dateien',
+            filesystem: 'Reparatur beschädigter Dateisysteme',
+            compressed: 'Dekomprimierung und Wiederherstellung komprimierter Dateien',
+            raid: 'Datenübertragung aus beschädigtem RAID-Array',
+            database: 'Datenwiederherstellung aus beschädigten Datenbanken'
+          }
+        },
+        hardware: {
+          title: 'Hardware-Datenwiederherstellung',
+          items: {
+            electronics: 'Austausch der Festplattenelektronik',
+            heads: 'Kopfaustausch in Reinraumumgebung',
+            mechanics: 'Mikromanipulation mit HDD-Mechanik',
+            bga: 'BGA-Chip-Löten und Firmware-Chip-Austausch',
+            rom: 'Arbeit mit ROM-Emulator',
+            service: 'Reparatur des Festplatten-Servicebereichs'
+          }
+        },
+        specialized: {
+          title: 'Spezialisierte Dienstleistungen',
+          items: {
+            pc3000: 'Arbeit mit PC-3000 UDMA/SSD/Flash',
+            nand: 'NAND-Übersetzer-Rekonstruktion',
+            security: 'Analyse und Reparatur von T2/T3-Sicherheitschips',
+            mcmt: 'MCMT-Tabellen-Rekonstruktion',
+            firmware: 'Firmware-Analyse und -Modifikation',
+            reverse: 'Dateisystem-Reverse-Engineering',
+            damaged: 'Arbeit mit beschädigten Servicedaten'
+          }
+        },
+        express: {
+          title: 'Express-Dienste',
+          items: {
+            h24: 'Express-Bearbeitungszuschlag (innerhalb von 24 Stunden)',
+            overtime: 'Arbeit außerhalb der Geschäftszeiten',
+            weekend: 'Wochenend- und Feiertagsarbeit'
+          }
+        },
+        additional: {
+          title: 'Zusätzliche Dienstleistungen',
+          items: {
+            consulting: 'Beratung',
+            backup: 'Sicherung wiederhergestellter Daten auf neuen Medien',
+            encryption: 'Verschlüsselung wiederhergestellter Daten',
+            transport: 'Transport zum Kunden'
+          }
+        }
+      },
+      pricing: {
+        hourly: '€/Stunde',
+        percentage: '%',
+        distance: '€/km + 50€/Stunde',
+        note: 'Die Mindestabrechnung beträgt 1 Stunde. Die Preise verstehen sich ohne MwSt. Die Preise beinhalten keine Ersatzteile und Medien für die Datensicherung. Der genaue Preis wird nach der Grunddiagnose festgelegt. Bei erfolgloser Datenrettung wird nur die Diagnose berechnet.'
       }
     }
   },
@@ -267,7 +433,19 @@ export const de: Translations = {
       email: 'E-Mail',
       phone: 'Telefon',
       message: 'Nachricht',
-      send: 'Nachricht senden'
+      send: 'Nachricht senden',
+      sending: 'Wird gesendet...',
+      success: 'Nachricht erfolgreich gesendet',
+      error: 'Ein Fehler ist aufgetreten. Bitte versuchen Sie es später erneut.',
+      rateLimit: 'Zu viele Anfragen. Bitte versuchen Sie es in {seconds} Sekunden erneut.',
+      tooManyRequests: 'Zu viele Anfragen. Bitte versuchen Sie es später erneut.',
+      errors: {
+        name: 'Name ist erforderlich',
+        email: 'E-Mail ist erforderlich',
+        emailFormat: 'Ungültiges E-Mail-Format',
+        phone: 'Ungültiges Telefonformat',
+        message: 'Nachricht ist erforderlich'
+      }
     },
     info: {
       title: 'Kontaktinformationen',
@@ -283,6 +461,10 @@ export const de: Translations = {
     }
   },
   techPage: {
+    ourTechnology: {
+      title: 'Unsere Technologie',
+      description: 'Wir verwenden modernste Technologien und Verfahren für die Datenrettung. Unser Labor ist mit fortschrittlichen Werkzeugen ausgestattet, darunter PC-3000-Systeme für umfassende Diagnose und Datenwiederherstellung von verschiedenen Medientypen. Dank dieser Technologien können wir auch die anspruchsvollsten Datenrettungsfälle lösen.'
+    },
     title: 'Unsere Technologie',
     subtitle: 'Hochmoderne Ausstattung für professionelle Datenrettung',
     cleanRoom: {
@@ -364,7 +546,7 @@ export const de: Translations = {
     },
     verification: {
       title: 'Überprüfung',
-      desc: 'Verifizierung der wiederhergestellten Daten'
+      desc: 'Überprüfung der wiederhergestellten Daten'
     },
     delivery: {
       title: 'Datenübergabe',
@@ -375,26 +557,26 @@ export const de: Translations = {
     privacy: 'Datenschutz',
     terms: 'Geschäftsbedingungen',
     cookies: 'Cookies',
-    legal: 'Rechtliche Hinweise'
+    legal: 'Rechtliche Informationen'
   },
   privacy: {
-    title: 'Datenschutzerklärung',
-    subtitle: 'Informationen zur Verarbeitung und zum Schutz Ihrer personenbezogenen Daten',
+    title: 'Datenschutzrichtlinie',
+    subtitle: 'Informationen über die Verarbeitung und den Schutz Ihrer personenbezogenen Daten',
     dataProtection: {
       title: 'Datenschutz',
-      content: 'Wir verarbeiten Ihre personenbezogenen Daten in Übereinstimmung mit der DSGVO und geltendem Recht. Wir verwenden modernste Technologien und Verfahren, um maximale Sicherheit Ihrer Daten zu gewährleisten. Alle Daten werden auf gesicherten Servern in der EU gespeichert.'
+      content: 'Wir verarbeiten Ihre personenbezogenen Daten in Übereinstimmung mit der DSGVO und den geltenden Gesetzen. Wir verwenden die neuesten Technologien und Verfahren, um maximale Sicherheit Ihrer Daten zu gewährleisten. Alle Daten werden auf sicheren Servern in der EU gespeichert.'
     },
     security: {
       title: 'Sicherheitsmaßnahmen',
-      content: 'Wir implementieren strenge Sicherheitsmaßnahmen einschließlich Datenverschlüsselung, Zugangskontrolle und regelmäßiger Sicherheitsaudits. Unsere Mitarbeiter werden regelmäßig im Bereich Datenschutz geschult und sind zur Verschwiegenheit verpflichtet.'
+      content: 'Wir implementieren strenge Sicherheitsmaßnahmen, darunter Datenverschlüsselung, Zugangskontrolle und regelmäßige Sicherheitsaudits. Unsere Mitarbeiter werden regelmäßig im Bereich des Datenschutzes geschult und sind zur Vertraulichkeit verpflichtet.'
     },
     transparency: {
       title: 'Transparenz',
-      content: 'Wir sind maximal transparent bezüglich der Art und Weise, wie wir Ihre personenbezogenen Daten verarbeiten. Wir erheben nur Daten, die für die Erbringung unserer Dienstleistungen erforderlich sind, und verkaufen sie niemals an Dritte. Wir verwenden Ihre Daten ausschließlich für die Zwecke, denen Sie zugestimmt haben.'
+      content: 'Wir sind vollständig transparent darüber, wie wir Ihre personenbezogenen Daten verarbeiten. Wir sammeln nur Daten, die für die Erbringung unserer Dienstleistungen erforderlich sind, und verkaufen sie niemals an Dritte. Wir verwenden Ihre Daten ausschließlich für Zwecke, denen Sie zugestimmt haben.'
     },
     rights: {
       title: 'Ihre Rechte',
-      content: 'Sie haben das Recht auf Zugang zu Ihren personenbezogenen Daten, deren Berichtigung oder Löschung, das Recht auf Einschränkung der Verarbeitung und das Recht, der Verarbeitung zu widersprechen. Sie haben auch das Recht auf Datenübertragbarkeit und das Recht, Beschwerde bei einer Aufsichtsbehörde einzureichen.'
+      content: 'Sie haben das Recht auf Zugang zu Ihren personenbezogenen Daten, auf Berichtigung oder Löschung, auf Einschränkung der Verarbeitung und das Recht, der Verarbeitung zu widersprechen. Sie haben auch das Recht auf Datenübertragbarkeit und das Recht, eine Beschwerde bei einer Aufsichtsbehörde einzureichen.'
     },
     contact: {
       title: 'Kontakt für Datenschutz',
@@ -404,15 +586,15 @@ export const de: Translations = {
   },
   terms: {
     title: 'Geschäftsbedingungen',
-    subtitle: 'Allgemeine Geschäftsbedingungen der DataHelp GmbH',
+    subtitle: 'Allgemeine Geschäftsbedingungen von DataHelp',
     lastUpdated: 'Letzte Aktualisierung: 1. März 2024',
     sections: {
       general: {
         title: 'Allgemeine Bestimmungen',
-        content: 'Diese Allgemeinen Geschäftsbedingungen regeln die Beziehungen zwischen der DataHelp GmbH und ihren Kunden bei der Erbringung von Datenrettungsdiensten.'
+        content: 'Diese allgemeinen Geschäftsbedingungen regeln die Beziehung zwischen DataHelp s.r.o. und seinen Kunden bei der Erbringung von Datenrettungsdiensten.'
       },
       services: {
-        title: 'Angebotene Dienstleistungen',
+        title: 'Erbrachte Dienstleistungen',
         content: 'Das Unternehmen bietet Datenrettungsdienste von beschädigten Datenträgern an. Die Dienstleistungen umfassen Diagnose, Datenrettung und sichere Übergabe an den Kunden.'
       },
       pricing: {
@@ -421,32 +603,32 @@ export const de: Translations = {
       },
       warranty: {
         title: 'Garantien',
-        content: 'Das Unternehmen garantiert maximalen Einsatz bei der Datenrettung. Wir haften nicht für Daten, die aufgrund physischer Beschädigung nicht gerettet werden können.'
+        content: 'Das Unternehmen garantiert maximale Anstrengungen bei der Datenrettung. Wir haften nicht für Daten, die aufgrund physischer Beschädigung nicht wiederhergestellt werden können.'
       },
       confidentiality: {
         title: 'Vertraulichkeit',
-        content: 'Wir verpflichten uns zu absoluter Verschwiegenheit über alle Daten und Informationen, die während der Dienstleistungserbringung erlangt werden.'
+        content: 'Wir verpflichten uns zu absoluter Vertraulichkeit bezüglich aller Daten und Informationen, die bei der Erbringung von Dienstleistungen erlangt werden.'
       },
       complaints: {
-        title: 'Reklamationen',
-        content: 'Eventuelle Reklamationen der Dienstleistungen behandeln wir individuell mit maximaler Bemühung um Kundenzufriedenheit. Reklamationen können innerhalb von 30 Tagen geltend gemacht werden.'
+        title: 'Beschwerden',
+        content: 'Wir behandeln alle Beschwerden zu Dienstleistungen individuell mit maximaler Anstrengung für die Kundenzufriedenheit. Beschwerden können innerhalb von 30 Tagen eingereicht werden.'
       }
     }
   },
   cookies: {
     title: 'Cookie-Richtlinie',
-    subtitle: 'Informationen zur Verwendung von Cookies auf unserer Website',
+    subtitle: 'Informationen zur Cookie-Nutzung auf unserer Website',
     lastUpdated: 'Letzte Aktualisierung: 1. März 2024',
     sections: {
       what: {
         title: 'Was sind Cookies',
-        content: 'Cookies sind kleine Textdateien, die bei Ihrem Besuch auf unserer Website in Ihrem Browser gespeichert werden. Sie helfen uns, die grundlegende Funktionalität der Website zu gewährleisten, die Besucherzahlen zu analysieren und die Inhalte an Ihre Bedürfnisse anzupassen.'
+        content: 'Cookies sind kleine Textdateien, die in Ihrem Browser gespeichert werden, wenn Sie unsere Website besuchen. Sie helfen uns, die grundlegende Funktionalität der Website zu gewährleisten, den Verkehr zu analysieren und Inhalte an Ihre Bedürfnisse anzupassen.'
       },
       types: {
-        title: 'Cookie-Arten',
+        title: 'Arten von Cookies',
         necessary: {
           title: 'Notwendige Cookies',
-          content: 'Diese Cookies sind für das ordnungsgemäße Funktionieren der Website erforderlich. Sie können nicht deaktiviert werden.'
+          content: 'Diese Cookies sind für das ordnungsgemäße Funktionieren der Website unerlässlich. Sie können nicht deaktiviert werden.'
         },
         analytical: {
           title: 'Analytische Cookies',
@@ -461,18 +643,18 @@ export const de: Translations = {
         title: 'Wie wir Cookies verwenden',
         content: 'Wir verwenden Cookies für:',
         purposes: [
-          'Gewährleistung der grundlegenden Websitenfunktionalität',
-          'Analyse der Besucherzahlen und des Nutzerverhaltens',
+          'Gewährleistung der grundlegenden Website-Funktionalität',
+          'Analyse des Verkehrs und des Nutzerverhaltens',
           'Verbesserung unserer Dienstleistungen',
           'Speicherung Ihrer Präferenzen'
         ]
       },
       control: {
         title: 'Cookie-Verwaltung',
-        content: 'Sie können Cookies in Ihren Browsereinstellungen verwalten oder deaktivieren. Das Deaktivieren bestimmter Cookies kann jedoch die Funktionalität unserer Website einschränken.'
+        content: 'Sie können Cookies in Ihren Browsereinstellungen verwalten oder deaktivieren. Die Deaktivierung einiger Cookies kann jedoch die Funktionalität unserer Website einschränken.'
       },
       consent: {
-        title: 'Ihre Einwilligung',
+        title: 'Ihre Zustimmung',
         content: 'Durch die Nutzung unserer Website stimmen Sie der Verwendung von Cookies gemäß dieser Richtlinie zu.'
       }
     }

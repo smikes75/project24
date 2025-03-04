@@ -10,7 +10,8 @@ export function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const location = useLocation();
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
+  const currentLang = i18n.language;
 
   useEffect(() => {
     setIsMenuOpen(false);
@@ -26,7 +27,8 @@ export function Header() {
   }, []);
 
   const isActive = (path: string) => {
-    return location.pathname === path ? "text-accent font-bold" : "text-gray-700 hover:text-accent font-bold";
+    const fullPath = `/${currentLang}${path}`;
+    return location.pathname === fullPath ? "text-accent font-bold" : "text-gray-700 hover:text-accent font-bold";
   };
 
   return (
@@ -39,12 +41,12 @@ export function Header() {
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-8">
-            <Link to="/" className={isActive("/")}>{t('nav.home')}</Link>
-            <Link to="/services" className={isActive("/services")}>{t('nav.services')}</Link>
-            <Link to="/about" className={isActive("/about")}>{t('nav.about')}</Link>
-            <Link to="/pricing" className={isActive("/pricing")}>{t('nav.pricing')}</Link>
-            <Link to="/faq" className={isActive("/faq")}>FAQ</Link>
-            <Link to="/contact" className={isActive("/contact")}>{t('nav.contact')}</Link>
+            <Link to={`/${currentLang}`} className={isActive("")}>{t('nav.home')}</Link>
+            <Link to={`/${currentLang}/services`} className={isActive("/services")}>{t('nav.services')}</Link>
+            <Link to={`/${currentLang}/about`} className={isActive("/about")}>{t('nav.about')}</Link>
+            <Link to={`/${currentLang}/pricing`} className={isActive("/pricing")}>{t('nav.pricing')}</Link>
+            <Link to={`/${currentLang}/faq`} className={isActive("/faq")}>FAQ</Link>
+            <Link to={`/${currentLang}/contact`} className={isActive("/contact")}>{t('nav.contact')}</Link>
             <LanguageSelector />
           </div>
 
@@ -64,12 +66,12 @@ export function Header() {
         {/* Mobile Navigation */}
         {isMenuOpen && (
           <div className="md:hidden mt-4 space-y-4 pb-4">
-            <Link to="/" className={`block font-bold ${isActive("/")}`}>{t('nav.home')}</Link>
-            <Link to="/services" className={`block font-bold ${isActive("/services")}`}>{t('nav.services')}</Link>
-            <Link to="/about" className={`block font-bold ${isActive("/about")}`}>{t('nav.about')}</Link>
-            <Link to="/pricing" className={`block font-bold ${isActive("/pricing")}`}>{t('nav.pricing')}</Link>
-            <Link to="/faq" className={`block font-bold ${isActive("/faq")}`}>FAQ</Link>
-            <Link to="/contact" className={`block font-bold ${isActive("/contact")}`}>{t('nav.contact')}</Link>
+            <Link to={`/${currentLang}`} className={`block font-bold ${isActive("")}`}>{t('nav.home')}</Link>
+            <Link to={`/${currentLang}/services`} className={`block font-bold ${isActive("/services")}`}>{t('nav.services')}</Link>
+            <Link to={`/${currentLang}/about`} className={`block font-bold ${isActive("/about")}`}>{t('nav.about')}</Link>
+            <Link to={`/${currentLang}/pricing`} className={`block font-bold ${isActive("/pricing")}`}>{t('nav.pricing')}</Link>
+            <Link to={`/${currentLang}/faq`} className={`block font-bold ${isActive("/faq")}`}>FAQ</Link>
+            <Link to={`/${currentLang}/contact`} className={`block font-bold ${isActive("/contact")}`}>{t('nav.contact')}</Link>
           </div>
         )}
       </nav>

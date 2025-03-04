@@ -4,7 +4,8 @@ import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
 
 export function Footer() {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
+  const currentLang = i18n.language;
 
   return (
     <footer className="bg-primary text-white py-12">
@@ -14,9 +15,9 @@ export function Footer() {
           <div>
             <h3 className="text-xl font-semibold mb-6">DataHelp</h3>
             <div className="space-y-3">
-              <Link to="/services" className="block hover:text-accent transition-colors">{t('nav.services')}</Link>
-              <Link to="/about" className="block hover:text-accent transition-colors">{t('nav.about')}</Link>
-              <Link to="/faq" className="block hover:text-accent transition-colors">FAQ</Link>
+              <Link to={`/${currentLang}/services`} className="block hover:text-accent transition-colors">{t('nav.services')}</Link>
+              <Link to={`/${currentLang}/about`} className="block hover:text-accent transition-colors">{t('nav.about')}</Link>
+              <Link to={`/${currentLang}/faq`} className="block hover:text-accent transition-colors">FAQ</Link>
             </div>
           </div>
 
@@ -24,9 +25,9 @@ export function Footer() {
           <div>
             <h3 className="text-xl font-semibold mb-6">{t('nav.services')}</h3>
             <div className="space-y-3">
-              <Link to="/services/hdd-recovery" className="block hover:text-accent transition-colors">{t('services.hdd.title')}</Link>
-              <Link to="/services/ssd-recovery" className="block hover:text-accent transition-colors">{t('services.ssd.title')}</Link>
-              <Link to="/services/raid-systems" className="block hover:text-accent transition-colors">{t('services.raid.title')}</Link>
+              <Link to={`/${currentLang}/services/hdd-recovery`} className="block hover:text-accent transition-colors">{t('services.hdd.title')}</Link>
+              <Link to={`/${currentLang}/services/ssd-recovery`} className="block hover:text-accent transition-colors">{t('services.ssd.title')}</Link>
+              <Link to={`/${currentLang}/services/raid-systems`} className="block hover:text-accent transition-colors">{t('services.raid.title')}</Link>
             </div>
           </div>
 
@@ -73,9 +74,9 @@ export function Footer() {
               © {new Date().getFullYear()} DataHelp.eu
             </div>
             <div className="flex flex-wrap gap-4 md:gap-6 text-sm">
-              <Link to="/privacy" className="hover:text-accent transition-colors">{t('footer.privacy')}</Link>
-              <Link to="/terms" className="hover:text-accent transition-colors">{t('footer.terms')}</Link>
-              <Link to="/cookies" className="hover:text-accent transition-colors">{t('footer.cookies')}</Link>
+              <Link to={`/${currentLang}/privacy`} className="hover:text-accent transition-colors">{t('footer.privacy')}</Link>
+              <Link to={`/${currentLang}/terms`} className="hover:text-accent transition-colors">{t('footer.terms')}</Link>
+              <Link to={`/${currentLang}/cookies`} className="hover:text-accent transition-colors">{t('footer.cookies')}</Link>
             </div>
           </div>
         </div>

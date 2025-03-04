@@ -1,5 +1,5 @@
 import React from 'react';
-import { Phone, Mail, MapPin, Shield, MessageSquare, Building } from 'lucide-react';
+import { Phone, Mail, MessageSquare, Building } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 import { PageHeader } from '../components/PageHeader';
 import { SEO } from '../components/SEO';
@@ -72,8 +72,8 @@ function ContactPage() {
       />
 
       <div className="container mx-auto px-4 py-16">
-        {/* Contact Form Section */}
-        <div className="max-w-2xl mx-auto mb-24">
+        <div className="grid md:grid-cols-2 gap-8">
+          {/* Contact Form Section */}
           <div className="bg-white rounded-lg shadow-lg p-8">
             <div className="flex items-center space-x-3 mb-6">
               <MessageSquare className="h-6 w-6 text-accent" />
@@ -81,46 +81,46 @@ function ContactPage() {
             </div>
             <Contact />
           </div>
-        </div>
 
-        {/* Partners Section */}
-        <div>
-          <h2 className="text-2xl font-bold text-center text-primary mb-12">
-            {t('contact.partners.title')}
-          </h2>
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {partners.map((partner, index) => (
-              <div key={index} className="bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow">
-                <div className="flex items-start space-x-4">
-                  <Building className="h-6 w-6 text-accent flex-shrink-0 mt-1" />
-                  <div>
-                    <h3 className="text-xl font-semibold text-primary mb-1">{partner.city}</h3>
-                    <p className="text-sm text-accent mb-2">{partner.country}</p>
-                    <p className="text-gray-600 mb-3 text-sm">{partner.address}</p>
-                    <div className="space-y-1">
-                      <p className="flex items-center space-x-2">
-                        <Phone className="h-4 w-4 text-accent" />
-                        <a 
-                          href={`tel:${partner.phone}`} 
-                          className="text-gray-600 text-sm hover:text-primary transition-colors"
-                        >
-                          {partner.phone}
-                        </a>
-                      </p>
-                      <p className="flex items-center space-x-2">
-                        <Mail className="h-4 w-4 text-accent" />
-                        <a 
-                          href={`mailto:${partner.email}`}
-                          className="text-gray-600 text-sm hover:text-primary transition-colors"
-                        >
-                          {partner.email}
-                        </a>
-                      </p>
+          {/* Partners Section */}
+          <div className="bg-white rounded-lg shadow-lg p-8">
+            <h2 className="text-2xl font-bold text-primary mb-8">
+              {t('contact.partners.title')}
+            </h2>
+            <div className="space-y-6">
+              {partners.map((partner, index) => (
+                <div key={index} className="border-l-4 border-accent pl-4">
+                  <div className="flex items-start space-x-4">
+                    <Building className="h-6 w-6 text-accent flex-shrink-0 mt-1" />
+                    <div>
+                      <h3 className="text-xl font-semibold text-primary mb-1">{partner.city}</h3>
+                      <p className="text-sm text-accent mb-2">{partner.country}</p>
+                      <p className="text-gray-600 mb-3 text-sm">{partner.address}</p>
+                      <div className="space-y-1">
+                        <p className="flex items-center space-x-2">
+                          <Phone className="h-4 w-4 text-accent" />
+                          <a 
+                            href={`tel:${partner.phone}`} 
+                            className="text-gray-600 text-sm hover:text-primary transition-colors"
+                          >
+                            {partner.phone}
+                          </a>
+                        </p>
+                        <p className="flex items-center space-x-2">
+                          <Mail className="h-4 w-4 text-accent" />
+                          <a 
+                            href={`mailto:${partner.email}`}
+                            className="text-gray-600 text-sm hover:text-primary transition-colors"
+                          >
+                            {partner.email}
+                          </a>
+                        </p>
+                      </div>
                     </div>
                   </div>
                 </div>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
         </div>
       </div>

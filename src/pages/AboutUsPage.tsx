@@ -5,7 +5,8 @@ import { PageHeader } from '../components/PageHeader';
 import { Link } from 'react-router-dom';
 
 function AboutUsPage() {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
+  const currentLang = i18n.language;
 
   const features = [
     {
@@ -47,7 +48,7 @@ function AboutUsPage() {
           {/* Technology Button */}
           <div className="flex justify-center">
             <Link 
-              to="/technology" 
+              to={`/${currentLang}/technology`} 
               className="inline-flex items-center space-x-2 bg-primary text-white px-8 py-4 rounded-lg font-semibold hover:bg-primary-light transition"
             >
               <Cpu className="h-5 w-5" />

@@ -5,7 +5,8 @@ import { Link } from 'react-router-dom';
 import { SEO } from '../../components/SEO';
 
 function RAIDSystemsPage() {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
+  const currentLang = i18n.language;
 
   const features = [
     {
@@ -24,6 +25,30 @@ function RAIDSystemsPage() {
       description: t('services.raid.features.virtualDesc')
     }
   ];
+
+  // Translate case studies link text based on language
+  const getCaseStudiesText = () => {
+    switch (currentLang) {
+      case 'en':
+        return {
+          title: "Case Studies",
+          description: "View real examples of successful data recovery from damaged RAID arrays and NAS servers"
+        };
+      case 'de':
+        return {
+          title: "Fallstudien",
+          description: "Sehen Sie sich reale Beispiele erfolgreicher Datenrettung von beschädigten RAID-Arrays und NAS-Servern an"
+        };
+      case 'cs':
+      default:
+        return {
+          title: "Případové studie",
+          description: "Prohlédněte si reálné příklady úspěšné záchrany dat z poškozených RAID polí a NAS serverů"
+        };
+    }
+  };
+
+  const caseStudiesText = getCaseStudiesText();
 
   return (
     <div className="min-h-screen bg-gray-50">
@@ -113,13 +138,13 @@ function RAIDSystemsPage() {
 
         {/* Case Studies Link */}
         <Link 
-          to="/services/raid-systems/case-studies"
+          to={`/${currentLang}/services/raid-systems/case-studies`}
           className="block bg-white rounded-lg shadow-lg p-8 hover:shadow-xl transition-shadow"
         >
           <div className="flex items-center justify-between">
             <div>
-              <h2 className="text-2xl font-bold text-primary mb-2">Případové studie</h2>
-              <p className="text-gray-600">Prohlédněte si reálné příklady úspěšné záchrany dat z poškozených RAID polí a NAS serverů</p>
+              <h2 className="text-2xl font-bold text-primary mb-2">{caseStudiesText.title}</h2>
+              <p className="text-gray-600">{caseStudiesText.description}</p>
             </div>
             <ArrowRight className="h-8 w-8 text-accent" />
           </div>

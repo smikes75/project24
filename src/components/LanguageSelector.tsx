@@ -1,11 +1,17 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import { FLAG_COMPONENTS, type LanguageKey } from './FlagComponents';
+import { useLanguageRouter, SupportedLanguage } from '../utils/i18nUtils';
+
+interface FlagProps {
+  className?: string;
+}
 
 export function LanguageSelector() {
   const { i18n } = useTranslation();
   const [isOpen, setIsOpen] = useState(false);
   const dropdownRef = useRef<HTMLDivElement>(null);
+  const { changeLanguage } = useLanguageRouter();
 
   useEffect(() => {
     if (!i18n.language || !Object.keys(FLAG_COMPONENTS).includes(i18n.language)) {
@@ -23,8 +29,8 @@ export function LanguageSelector() {
     return () => document.removeEventListener('mousedown', handleClickOutside);
   }, []);
 
-  const changeLanguage = (lng: LanguageKey) => {
-    i18n.changeLanguage(lng);
+  const handleLanguageChange = (lng: LanguageKey) => {
+    changeLanguage(lng as SupportedLanguage);
     setIsOpen(false);
   };
 
@@ -47,10 +53,10 @@ export function LanguageSelector() {
           className="absolute right-1/2 translate-x-1/2 mt-1 bg-white bg-opacity-90 rounded-md shadow-lg z-50 w-12 overflow-hidden py-1"
         >
           <div className="flex flex-col items-center">
-{(Object.entries(FLAG_COMPONENTS) as [LanguageKey, React.FC<FlagProps>][]).map(([lang, FlagComponent]) => (
+            {(Object.entries(FLAG_COMPONENTS) as [LanguageKey, React.FC<FlagProps>][]).map(([lang, FlagComponent]) => (
               <button
                 key={lang}
-                onClick={() => changeLanguage(lang)}
+                onClick={() => handleLanguageChange(lang)}
                 className="w-full hover:bg-gray-100 py-2 flex justify-center"
               >
                 <div className="w-6">

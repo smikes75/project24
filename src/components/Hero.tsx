@@ -5,7 +5,8 @@ import { Link } from 'react-router-dom';
 import { backgroundImages } from '../utils/imageUtils';
 
 export function Hero() {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
+  const currentLang = i18n.language;
 
   return (
     <div className="relative">
@@ -34,14 +35,14 @@ export function Hero() {
             </p>
             <div className="flex flex-wrap gap-4">
               <Link 
-                to="/contact" 
+                to={`/${currentLang}/contact`} 
                  className="bg-accent border-2 border-accent text-white text-lg px-6 py-3 rounded-lg font-semibold hover:bg-accent-light hover:text-white transition"
 
               >
                 {t('hero.consultation')}
               </Link>
               <Link 
-                to="/services" 
+                to={`/${currentLang}/services`} 
                 className="border-2 border-white text-white text-lg px-6 py-3 rounded-lg font-semibold hover:bg-white hover:text-primary transition"
               >
                 {t('hero.ourServices')}

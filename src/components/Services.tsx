@@ -4,14 +4,15 @@ import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
 
 export function Services() {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
+  const currentLang = i18n.language;
 
   const services = [
     {
       icon: <HardDrive className="h-16 w-16 text-accent" />,
       title: t('services.hdd.title'),
       description: t('services.hdd.desc'),
-      link: '/services/hdd-recovery',
+      link: `/${currentLang}/services/hdd-recovery`,
       features: [
         t('services.hdd.features.mechanical'),
         t('services.hdd.features.electronic'),
@@ -22,7 +23,7 @@ export function Services() {
       icon: <Smartphone className="h-16 w-16 text-accent" />,
       title: t('services.ssd.title'),
       description: t('services.ssd.desc'),
-      link: '/services/ssd-recovery',
+      link: `/${currentLang}/services/ssd-recovery`,
       features: [
         t('services.ssd.features.controller'),
         t('services.ssd.features.firmware'),
@@ -33,7 +34,7 @@ export function Services() {
       icon: <Database className="h-16 w-16 text-accent" />,
       title: t('services.raid.title'),
       description: t('services.raid.desc'),
-      link: '/services/raid-systems',
+      link: `/${currentLang}/services/raid-systems`,
       features: [
         t('services.raid.features.hardware'),
         t('services.raid.features.software'),
@@ -44,7 +45,7 @@ export function Services() {
       icon: <Handshake className="h-16 w-16 text-accent" />,
       title: t('services.business.title'),
       description: t('services.business.desc'),
-      link: '/services/business-solutions',
+      link: `/${currentLang}/services/business-solutions`,
       features: [
         t('services.business.features.support'),
         t('services.business.features.security'),

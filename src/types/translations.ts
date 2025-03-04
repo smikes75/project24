@@ -56,16 +56,16 @@ export interface Translations {
     hdd: {
       title: string;
       desc: string;
-      keywords: {
+      keywords?: {
         recovery: string;
       };
       features: {
         mechanical: string;
-        mechanicalDesc: string;
+        mechanicalDesc?: string;
         electronic: string;
-        electronicDesc: string;
+        electronicDesc?: string;
         logical: string;
-        logicalDesc: string;
+        logicalDesc?: string;
       };
       supported: {
         title: string;
@@ -80,16 +80,16 @@ export interface Translations {
     ssd: {
       title: string;
       desc: string;
-      keywords: {
+      keywords?: {
         recovery: string;
       };
       features: {
         controller: string;
-        controllerDesc: string;
+        controllerDesc?: string;
         firmware: string;
-        firmwareDesc: string;
+        firmwareDesc?: string;
         flash: string;
-        flashDesc: string;
+        flashDesc?: string;
       };
       supported: {
         title: string;
@@ -104,16 +104,16 @@ export interface Translations {
     raid: {
       title: string;
       desc: string;
-      keywords: {
+      keywords?: {
         recovery: string;
       };
       features: {
         hardware: string;
-        hardwareDesc: string;
+        hardwareDesc?: string;
         software: string;
-        softwareDesc: string;
+        softwareDesc?: string;
         virtual: string;
-        virtualDesc: string;
+        virtualDesc?: string;
       };
       supported: {
         title: string;
@@ -130,6 +130,9 @@ export interface Translations {
     business: {
       title: string;
       desc: string;
+      keywords?: {
+        recovery: string;
+      };
       contact: {
         salesTeam: string;
         leaveMessage: string;
@@ -178,12 +181,77 @@ export interface Translations {
       speed: string;
       speedDesc: string;
     };
-  };
-  reviews: {
-    title: string;
-    review1: string;
-    review2: string;
-    review3: string;
+    serviceList?: {
+      title: string;
+      subtitle: string;
+      description: string;
+      sections: {
+        diagnostics: {
+          title: string;
+          items: {
+            basic: string;
+            detailed: string;
+            planning: string;
+          }
+        };
+        software: {
+          title: string;
+          items: {
+            deleted: string;
+            filesystem: string;
+            compressed: string;
+            raid: string;
+            database: string;
+          }
+        };
+        hardware: {
+          title: string;
+          items: {
+            electronics: string;
+            heads: string;
+            mechanics: string;
+            bga: string;
+            rom: string;
+            service: string;
+          }
+        };
+        specialized: {
+          title: string;
+          items: {
+            pc3000: string;
+            nand: string;
+            security: string;
+            mcmt: string;
+            firmware: string;
+            reverse: string;
+            damaged: string;
+          }
+        };
+        express: {
+          title: string;
+          items: {
+            h24: string;
+            overtime: string;
+            weekend: string;
+          }
+        };
+        additional: {
+          title: string;
+          items: {
+            consulting: string;
+            backup: string;
+            encryption: string;
+            transport: string;
+          }
+        };
+      };
+      pricing: {
+        hourly: string;
+        percentage: string;
+        distance: string;
+        note: string;
+      }
+    }
   };
   pricing: {
     title: string;
@@ -238,6 +306,77 @@ export interface Translations {
         onsite: string;
       };
     };
+    serviceList?: {
+      title: string;
+      subtitle: string;
+      description: string;
+      sections: {
+        diagnostics: {
+          title: string;
+          items: {
+            basic: string;
+            detailed: string;
+            planning: string;
+          }
+        };
+        software: {
+          title: string;
+          items: {
+            deleted: string;
+            filesystem: string;
+            compressed: string;
+            raid: string;
+            database: string;
+          }
+        };
+        hardware: {
+          title: string;
+          items: {
+            electronics: string;
+            heads: string;
+            mechanics: string;
+            bga: string;
+            rom: string;
+            service: string;
+          }
+        };
+        specialized: {
+          title: string;
+          items: {
+            pc3000: string;
+            nand: string;
+            security: string;
+            mcmt: string;
+            firmware: string;
+            reverse: string;
+            damaged: string;
+          }
+        };
+        express: {
+          title: string;
+          items: {
+            h24: string;
+            overtime: string;
+            weekend: string;
+          }
+        };
+        additional: {
+          title: string;
+          items: {
+            consulting: string;
+            backup: string;
+            encryption: string;
+            transport: string;
+          }
+        };
+      };
+      pricing: {
+        hourly: string;
+        percentage: string;
+        distance: string;
+        note: string;
+      }
+    }
   };
   faq: {
     title: string;
@@ -276,6 +415,18 @@ export interface Translations {
       phone: string;
       message: string;
       send: string;
+      sending?: string;
+      success?: string;
+      error?: string;
+      rateLimit?: string;
+      tooManyRequests?: string;
+      errors?: {
+        name: string;
+        email: string;
+        emailFormat?: string;
+        phone?: string;
+        message: string;
+      }
     };
     info: {
       title: string;
@@ -291,6 +442,10 @@ export interface Translations {
     };
   };
   techPage: {
+    ourTechnology?: {
+      title: string;
+      description: string;
+    };
     title: string;
     subtitle: string;
     cleanRoom: {
@@ -383,7 +538,7 @@ export interface Translations {
     privacy: string;
     terms: string;
     cookies: string;
-    legal: string;
+    legal?: string;
   };
   privacy: {
     title: string;
@@ -480,13 +635,13 @@ export interface Translations {
       };
     };
   };
-  seo: {
-    about: {
+  seo?: {
+    about?: {
       title: string;
       description: string;
       keywords: string;
     };
-    services: {
+    services?: {
       title: string;
       description: string;
       keywords: string;

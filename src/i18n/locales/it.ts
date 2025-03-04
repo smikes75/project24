@@ -1,6 +1,18 @@
 import type { Translations } from '../../types/translations';
 
 export const it: Translations = {
+  seo: {
+    about: {
+      title: "Chi siamo | DataHelp.eu",
+      description: "Recupero dati professionale con oltre 20 anni di esperienza. Laboratorio specializzato, tecnici certificati e tecnologia all'avanguardia per il recupero dati.",
+      keywords: "chi siamo datahelp, esperienza recupero dati, team di esperti, laboratorio recupero dati, specialisti certificati, sicurezza dati, recupero dati professionale"
+    },
+    services: {
+      title: "Servizi | DataHelp.eu",
+      description: "Servizi completi di recupero dati per HDD, SSD, sistemi RAID e soluzioni aziendali. Laboratorio specializzato con oltre 20 anni di esperienza.",
+      keywords: "servizi recupero dati, servizi ripristino dati, recupero hdd, ripristino ssd, sistemi raid, soluzioni aziendali"
+    }
+  },
   nav: {
     home: 'Home',
     services: 'Servizi',
@@ -57,6 +69,9 @@ export const it: Translations = {
     hdd: {
       title: 'Recupero HDD',
       desc: 'Da dischi rigidi danneggiati o non funzionanti.',
+      keywords: {
+        recovery: "recupero dati hdd, ripristino dati disco rigido, riparazione disco rigido, danni meccanici hdd, guasti elettronici hdd, ricostruzione dati"
+      },
       features: {
         mechanical: 'Danni meccanici',
         mechanicalDesc: 'Guasti alle testine di lettura, danni ai piatti, errori dei dati di servizio',
@@ -78,6 +93,9 @@ export const it: Translations = {
     ssd: {
       title: 'Recupero SSD',
       desc: 'Recupero dati specializzato da memorie flash e SSD.',
+      keywords: {
+        recovery: "recupero dati ssd, ripristino dati disco ssd, riparazione disco ssd, controller danneggiato ssd, firmware ssd, memorie flash"
+      },
       features: {
         controller: 'Guasti al controller',
         controllerDesc: 'Recupero dati in caso di controller danneggiato',
@@ -99,6 +117,9 @@ export const it: Translations = {
     raid: {
       title: 'Sistemi RAID e NAS',
       desc: 'Recupero dati da tutti i tipi di array RAID e server NAS.',
+      keywords: {
+        recovery: "recupero dati raid, ripristino dati sistemi raid, riparazione array raid, ricostruzione raid, recupero server nas, ripristino sistemi san, recupero raid 0, ripristino raid 5, ricostruzione raid 10, RAID recovery, RAID 5E, RAID 6, crash server"
+      },
       features: {
         hardware: 'RAID hardware',
         hardwareDesc: 'Recupero dati in caso di guasto di più dischi',
@@ -122,6 +143,13 @@ export const it: Translations = {
     business: {
       title: 'Programma Partner',
       desc: 'Offriamo collaborazione per aziende IT e servizi',
+      keywords: {
+        recovery: "recupero dati aziendali, servizi per aziende, programma partner datahelp, recupero dati b2b, recupero dati express, servizio prioritario, recupero dati per aziende, recupero dati aziende it, sla recupero dati"
+      },
+      contact: {
+        salesTeam: 'Per ulteriori informazioni, contatta il nostro team commerciale:',
+        leaveMessage: 'O lasciaci un messaggio:'
+      },
       features: {
         support: 'Supporto tecnico',
         supportDesc: 'Supporto commerciale e tecnico, possibilità di formazione',
@@ -181,7 +209,7 @@ export const it: Translations = {
     hdd: {
       title: 'Recupero HDD',
       description: 'Dischi rigidi meccanicamente danneggiati o non funzionanti',
-      price: 'Da 350 €\nMax 1.200 €',
+      price: 'Da 350 €',
       noSuccess: 'Dati non recuperabili = non paghi il recupero',
       features: {
         diagnosis: 'Diagnosi iniziale gratuita',
@@ -193,7 +221,7 @@ export const it: Translations = {
     ssd: {
       title: 'Recupero SSD',
       description: 'SSD, chiavette USB e schede di memoria',
-      price: 'Da 250 €\nMax 1.400 €',
+      price: 'Da 250 €',
       noSuccess: 'Dati non recuperabili = non paghi il recupero',
       features: {
         diagnosis: 'Diagnosi iniziale gratuita',
@@ -263,7 +291,19 @@ export const it: Translations = {
       email: 'Email',
       phone: 'Telefono',
       message: 'Messaggio',
-      send: 'Invia messaggio'
+      send: 'Invia messaggio',
+      sending: 'Invio in corso...',
+      success: 'Messaggio inviato con successo',
+      error: 'Si è verificato un errore. Riprova più tardi.',
+      rateLimit: 'Troppe richieste. Riprova tra {seconds} secondi.',
+      tooManyRequests: 'Troppe richieste. Riprova più tardi.',
+      errors: {
+        name: 'Il nome è obbligatorio',
+        email: 'L\'email è obbligatoria',
+        emailFormat: 'Formato email non valido',
+        phone: 'Formato telefono non valido',
+        message: 'Il messaggio è obbligatorio'
+      }
     },
     info: {
       title: 'Informazioni di contatto',
@@ -279,6 +319,10 @@ export const it: Translations = {
     }
   },
   techPage: {
+    ourTechnology: {
+      title: 'La nostra tecnologia',
+      description: 'Utilizziamo tecnologie e procedure all\'avanguardia per il recupero dati. Il nostro laboratorio è dotato di strumenti avanzati, inclusi i sistemi PC-3000 per la diagnostica completa e il recupero dati da vari tipi di supporti. Grazie a queste tecnologie, possiamo risolvere anche i casi di recupero dati più complessi.'
+    },
     title: 'La nostra tecnologia',
     subtitle: 'Attrezzature all\'avanguardia per il recupero dati professionale',
     cleanRoom: {

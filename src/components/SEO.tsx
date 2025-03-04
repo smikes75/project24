@@ -1,6 +1,7 @@
 import React from 'react';
 import { Helmet } from 'react-helmet-async';
 import { useTranslation } from 'react-i18next';
+import { SUPPORTED_LANGUAGES } from '../utils/i18nUtils';
 
 interface SEOProps {
   title: string;
@@ -24,11 +25,12 @@ export function SEO({
   const { i18n } = useTranslation();
   const currentLang = i18n.language;
 
-  const alternateUrls = {
-    en: 'https://datahelp.eu/en',
-    de: 'https://datahelp.eu/de',
-    cs: 'https://datahelp.eu/cs'
-  };
+  // Generate alternate URLs for all supported languages
+  const alternateUrls = SUPPORTED_LANGUAGES.reduce((acc, lang) => {
+    const path = canonical.replace(/^https:\/\/datahelp\.eu(\/[a-z]{2})?/, '');
+    acc[lang] = `https://datahelp.eu/${lang}${path}`;
+    return acc;
+  }, {} as Record<string, string>);
 
   return (
     <Helmet>
@@ -46,7 +48,7 @@ export function SEO({
           href={url} 
         />
       ))}
-      <link rel="alternate" hrefLang="x-default" href="https://datahelp.eu" />
+      <link rel="alternate" hrefLang="x-default" href="https://datahelp.eu/en" />
       
       <meta property="og:locale" content={currentLang} />
       <meta property="og:title" content={title} />
